@@ -43,4 +43,22 @@ You will then need to create a user account and password for your new Linux dist
 
 ```
 wslconfig /?
+wslconfig /list
+wsl --unregister Ubuntu
+```
+
+## Accessing Linux files from Windows using \\wsl$
+Accessing Linux files via \\wsl$ will use the default user of your WSL distribution. Therefore any Windows app accessing Linux files will have the same permissions as the default user.
+
+## Configure global options with .wslconfig
+Available in Windows Build 19041 and later
+
+You can configure global WSL options by placing a .wslconfig file into the root directory of your users folder: C:\Users\<yourUserName>\.wslconfig. Many of these files are related to WSL 2, please keep in mind you may need to run wsl --shutdown to shut down the WSL 2 VM and then restart your WSL instance for these changes to take affect.
+
+Here is a sample .wslconfig file:
+```
+[wsl2]
+kernel=C:\\temp\\myCustomKernel
+memory=4GB # Limits VM memory in WSL 2 to 4 GB
+processors=2 # Makes the WSL 2 VM use two virtual processors
 ```
