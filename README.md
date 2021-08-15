@@ -19,5 +19,5 @@ To check your version and build number, select Windows logo key + R, type winver
 Open PowerShell as Administrator and run:
 ```bash
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-bash
+```
 Restart your machine to complete the WSL install and update to WSL 2.
